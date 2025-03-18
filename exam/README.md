@@ -8,15 +8,15 @@ Let’s assume that we have isolated bacteria in the patient and generated reads
 
 **Register**: Create an account on Galaxy [here](https://usegalaxy.org/login). You will need to fill out all fields. After logging into Galaxy, you will see the following dashboard on the right side of the page. Click on the plus ‘+’ and then create a new history. Name it whatever you like. All of the following analyses will be performed under this history.
 
-![Galaxy dataset history]()
+![Galaxy dataset history](https://github.com/harishmuh/Bioinformatics-II_Genome-Sequencing-Coursera/blob/main/exam/galaxy%20dataset%20history.jpg?raw=true)
 
 Next, we need to import our data. For this assignment, we will import raw data directly from the SRA database. Click on “Get Data” in the left side menu and search for the “Download and Extract Reads in FASTA/Q format from NCBI SRA”.
 
-![Get data]()
+![Get data](https://github.com/harishmuh/Bioinformatics-II_Genome-Sequencing-Coursera/blob/main/exam/get%20data.jpg?raw=true)
 
 Launch the tool and use accession number SRR643156 to import the data. Click "Execute" to import the data to your current history. It may take about 30 minutes for the app to begin execution and to load the data. When the tool is finished, you will be able to see the imported files and related information in your history on the right-hand side of the page.
 
-![launch execute]()
+![launch execute](https://github.com/harishmuh/Bioinformatics-II_Genome-Sequencing-Coursera/blob/main/exam/launch%20execute.jpg?raw=true)
 
 Next, we will use SPAdes to assemble the genome. Go to "tools" on the left side of the page and search for SPAdes, clicking on it to launch it. Use default settings except for the value of kmer size. For this homework assignment, you will need to run the program three separate time times (for k = 25, k = 55, and k = 85) to investigate how the choice of parameter k affects the resulting assembly.
 For each value of k, enter the value of k and select ‘Interleaved files’ as the file format and select the file you imported in the previous step in the reads section. Hit execute to run SPAdes on the file.
@@ -32,7 +32,7 @@ There are many assembly tools, but none of them is perfect. Biologists therefore
 
 **Scaffold**: An ordered sequence of contigs (possibly separated by gaps between them) that are reconstructed by an assembly algorithm. The order of contigs in a correctly assembled scaffold corresponds to their order in the genome. Existing assemblers specify the approximate lengths of gaps between contigs in a scaffold. 
 
-![scaffold]()
+![scaffold](https://github.com/harishmuh/Bioinformatics-II_Genome-Sequencing-Coursera/blob/main/exam/scaffold.jpg?raw=true)
 
 **N50 statistic**: N50 is a statistic that is used to measure the quality of an assembly. N50 is defined as the maximal contig length for which all contigs greater than or equal to that length comprise at least half of the sum of the lengths of all the contigs. For example, consider the five toy contigs with the following lengths: [10, 20, 30, 60, 70]. Here, the total length of contigs is 190, and contigs of length 60 and 70 account for at least 50% of the total length of contigs (60 + 70 = 130), but the contig of length 70 does not account for 50% of the total length of contigs. Thus, N50 is equal to 60. 
 
@@ -136,15 +136,15 @@ Consider the following three statistics:
 • The total length of long contigs. This statistic can be combined with N50 and the number of long contigs; a good assembly is one that has relatively few long contigs, but the total length of long contigs is high, as is N50.
 These three statistics can be found by analyzing the contigs.fasta file or the contigs.tabular file generated at the end of SPAdes execution. The tabular file is a summary sheet of all the contigs present in the assembly. Below is an example snapshot of what the fasta and tabular file look like, respectively, for k = 25.
 
-![fasta]()
+![fasta](https://github.com/harishmuh/Bioinformatics-II_Genome-Sequencing-Coursera/blob/main/exam/contig%20fasta.png?raw=true)
 
-![tabular]()
+![tabular](https://github.com/harishmuh/Bioinformatics-II_Genome-Sequencing-Coursera/blob/main/exam/contig%20tabular.png?raw=true)
 
 You will use the Quality Assessment Tool for Genome Assembly **QUAST** (Gurevich et al, 2013) to evaluate the quality of your assembly using the Staph reference genome as the gold standard.
 • Download the contigs.fasta file as part of the SPAdes output from each value of k.
 • For each of the three files, go to [QUAST]( http://cab.cc.spbu.ru/quast/) and upload your contigs.fasta file with the “Add files” button.
 • Leave the “Scaffolds” and “Find genes” boxes unchecked and keep the indicator on “Prokaryotic.”
-• Click on the “Another genome” link underneath “Genome.” Fill in a name and upload the [staph_genome.fasta]() file that we provided for the “Reference” file. (Note: we provide this file as a .txt, you will need to save it as .fasta). Leave the other two inputs (“Genes” and “Operons”) blank and click “Evaluate.”
+• Click on the “Another genome” link underneath “Genome.” Fill in a name and upload the [staph_genome.fasta](https://github.com/harishmuh/Bioinformatics-II_Genome-Sequencing-Coursera/blob/main/exam/staph_genome.fasta) file that we provided for the “Reference” file. (Note: we provide this file as a .txt, you will need to save it as .fasta). Leave the other two inputs (“Genes” and “Operons”) blank and click “Evaluate.”
 • A link to the report should appear on the right side of the page in a few moments. Evaluate the report and answer the following questions.
 • If you had difficulties running QUAST, please find the required reports for this part of the assignment in the Quast reports folder [here](https://drive.google.com/drive/folders/1L-cfjiyd9RJOwY1Slau-wQHGmO1g1xft?usp=sharing)
 • Select the report (a html file) corresponding to the k value chosen. Download it and open it using any web browser.
