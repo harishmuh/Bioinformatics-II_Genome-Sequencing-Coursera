@@ -1,4 +1,4 @@
-# Bioinformatics Application Challenge
+# Bioinformatics Application Challenge (Week 6)
 
 ## Final Exam Instructions
 Every year in the United States, half a million patients contract a Staphylococcus (Staph) infection after surgery. Many of these patients are infected with drug-resistant strains such as methicillin-resistant Staphylococcus aureus (MRSA), which can resist even last-resort antibiotics like Vancomycin and Daptomycin. As a result, MRSA causes over 20,000 deaths a year in the U.S. alone. Since there are over 40 different types of Staph bacteria that could be causing these infections, you want to determine which species is causing a Staph infection in a given patient by isolating this species in the patient and sequencing its genome. After you have sequenced its genome, scientists can start analyzing mutations that have led to antibiotic resistance. 
